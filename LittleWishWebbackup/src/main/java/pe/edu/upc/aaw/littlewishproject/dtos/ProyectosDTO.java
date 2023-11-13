@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
 public class ProyectosDTO {
-    private int id_proyecto;
+    private int idproyecto;
 
     private String nombre;
 
@@ -30,11 +30,11 @@ public class ProyectosDTO {
     private UsersDTO users;
 
     public int getId_proyecto() {
-        return id_proyecto;
+        return idproyecto;
     }
 
     public void setId_proyecto(int id_proyecto) {
-        this.id_proyecto = id_proyecto;
+        this.idproyecto = id_proyecto;
     }
 
     public String getNombre() {
