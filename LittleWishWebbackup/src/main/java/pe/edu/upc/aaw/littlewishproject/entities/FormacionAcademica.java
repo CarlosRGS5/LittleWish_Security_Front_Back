@@ -3,13 +3,13 @@ package pe.edu.upc.aaw.littlewishproject.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Formacion_Academica")
-public class Formacion_Academica {
+@Table(name = "FormacionAcademica")
+public class FormacionAcademica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_Formacion_academica;
+    private int idFormacionAcademica;
     @Column(name = "Nombre_Secundaria", length = 45, nullable = false)
-    private String Nombre_Secundaria;
+    private String nombreSecundaria;
     @ManyToOne
     @JoinColumn(name = "ID_Universidad")
     private Universidades universidades;
@@ -17,29 +17,30 @@ public class Formacion_Academica {
     @JoinColumn(name = "ID_Carrera")
     private Carreras carreras;
 
-    public Formacion_Academica() {
+    public FormacionAcademica() {
     }
-    public Formacion_Academica(int ID_Formacion_academica, String nombre_Secundaria, Universidades universidades, Carreras carreras) {
-        this.ID_Formacion_academica = ID_Formacion_academica;
-        Nombre_Secundaria = nombre_Secundaria;
+
+    public FormacionAcademica(int idFormacionAcademica, String nombreSecundaria, Universidades universidades, Carreras carreras) {
+        this.idFormacionAcademica = idFormacionAcademica;
+        this.nombreSecundaria = nombreSecundaria;
         this.universidades = universidades;
         this.carreras = carreras;
     }
 
-    public int getID_Formacion_academica() {
-        return ID_Formacion_academica;
+    public int getIdFormacionAcademica() {
+        return idFormacionAcademica;
     }
 
-    public void setID_Formacion_academica(int ID_Formacion_academica) {
-        this.ID_Formacion_academica = ID_Formacion_academica;
+    public void setIdFormacionAcademica(int idFormacionAcademica) {
+        this.idFormacionAcademica = idFormacionAcademica;
     }
 
-    public String getNombre_Secundaria() {
-        return Nombre_Secundaria;
+    public String getNombreSecundaria() {
+        return nombreSecundaria;
     }
 
-    public void setNombre_Secundaria(String nombre_Secundaria) {
-        Nombre_Secundaria = nombre_Secundaria;
+    public void setNombreSecundaria(String nombreSecundaria) {
+        this.nombreSecundaria = nombreSecundaria;
     }
 
     public Universidades getUniversidades() {

@@ -8,30 +8,30 @@ import java.time.LocalDate;
 public class Universidades {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_Universidad;
+    private int idUniversidad;
     @Column(name = "nameUniversidades", length = 45, nullable = false)
     private String nameUniversidades;
     @Column(name = "FechaIngreso", nullable = false)
-    private LocalDate FechaIngreso;
+    private LocalDate fechaIngreso;
     @Column(name = "FechaEgreso", nullable = false)
-    private LocalDate FechaEgreso;
+    private LocalDate fechaEgreso;
 
     public Universidades() {
     }
 
-    public Universidades(int ID_Universidad, String nameUniversidades, LocalDate fechaIngreso, LocalDate fechaEgreso) {
-        this.ID_Universidad = ID_Universidad;
+    public Universidades(int idUniversidad, String nameUniversidades, LocalDate fechaIngreso, LocalDate fechaEgreso) {
+        this.idUniversidad = idUniversidad;
         this.nameUniversidades = nameUniversidades;
-        FechaIngreso = fechaIngreso;
-        FechaEgreso = fechaEgreso;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaEgreso = fechaEgreso;
     }
 
-    public int getID_Universidad() {
-        return ID_Universidad;
+    public int getIdUniversidad() {
+        return idUniversidad;
     }
 
-    public void setID_Universidad(int ID_Universidad) {
-        this.ID_Universidad = ID_Universidad;
+    public void setIdUniversidad(int idUniversidad) {
+        this.idUniversidad = idUniversidad;
     }
 
     public String getNameUniversidades() {
@@ -43,18 +43,18 @@ public class Universidades {
     }
 
     public LocalDate getFechaIngreso() {
-        return FechaIngreso;
+        return fechaIngreso;
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
-        FechaIngreso = fechaIngreso;
+        this.fechaIngreso = fechaIngreso;
     }
 
     public LocalDate getFechaEgreso() {
-        return FechaEgreso;
+        return fechaEgreso;
     }
 
     public void setFechaEgreso(LocalDate fechaEgreso) {
-        FechaEgreso = fechaEgreso;
+        this.fechaEgreso = fechaEgreso;
     }
 }

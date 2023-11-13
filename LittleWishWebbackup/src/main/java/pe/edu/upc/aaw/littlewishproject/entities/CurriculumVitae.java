@@ -1,9 +1,6 @@
 package pe.edu.upc.aaw.littlewishproject.entities;
 
-import org.apache.catalina.User;
-
 import javax.persistence.*;
-import java.util.NavigableMap;
 
 @Entity
 @Table(name = "CurriculumVitae")
@@ -22,7 +19,7 @@ public class CurriculumVitae {
     private Experiencia_Laboral experiencia_laboral;
     @ManyToOne
     @JoinColumn(name = "ID_Formacion_academica",nullable = false)
-    private Formacion_Academica formacion_academica;
+    private FormacionAcademica formacion_academica;
     @OneToOne
     @JoinColumn(name = "user_id",nullable = false)
     private Users users;
@@ -30,7 +27,7 @@ public class CurriculumVitae {
     public CurriculumVitae() {
     }
 
-    public CurriculumVitae(int id_cv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, Formacion_Academica formacion_academica, Users users) {
+    public CurriculumVitae(int id_cv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, FormacionAcademica formacion_academica, Users users) {
         this.id_cv = id_cv;
         this.idiomas = idiomas;
         this.certificaciones = certificaciones;
@@ -71,11 +68,11 @@ public class CurriculumVitae {
         this.experiencia_laboral = experiencia_laboral;
     }
 
-    public Formacion_Academica getFormacion_academica() {
+    public FormacionAcademica getFormacion_academica() {
         return formacion_academica;
     }
 
-    public void setFormacion_academica(Formacion_Academica formacion_academica) {
+    public void setFormacion_academica(FormacionAcademica formacion_academica) {
         this.formacion_academica = formacion_academica;
     }
 

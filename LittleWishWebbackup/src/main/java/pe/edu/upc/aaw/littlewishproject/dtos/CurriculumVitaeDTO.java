@@ -2,16 +2,12 @@ package pe.edu.upc.aaw.littlewishproject.dtos;
 
 import pe.edu.upc.aaw.littlewishproject.entities.*;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
 public class CurriculumVitaeDTO {
     private int id_cv;
     private Idiomas idiomas;
     private Certificaciones certificaciones;
     private Experiencia_Laboral experiencia_laboral;
-    private Formacion_Academica formacion_academica;
+    private FormacionAcademica formacion_academica;
     private UsersDTO users;
 
     public int getId_cv() {
@@ -46,11 +42,11 @@ public class CurriculumVitaeDTO {
         this.experiencia_laboral = experiencia_laboral;
     }
 
-    public Formacion_Academica getFormacion_academica() {
+    public FormacionAcademica getFormacion_academica() {
         return formacion_academica;
     }
 
-    public void setFormacion_academica(Formacion_Academica formacion_academica) {
+    public void setFormacion_academica(FormacionAcademica formacion_academica) {
         this.formacion_academica = formacion_academica;
     }
 
