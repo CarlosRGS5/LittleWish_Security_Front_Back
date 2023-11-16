@@ -11,6 +11,16 @@ public class ComentarioDTO {
     private String comentario;
     private UsersDTO users;
 
+    private UsersDTO usersR;
+
+    public UsersDTO getUsersR() {
+        return usersR;
+    }
+
+    public void setUsersR(UsersDTO usersR) {
+        this.usersR = usersR;
+    }
+
     public int getIdComentario() {
         return idComentario;
     }

@@ -30,11 +30,21 @@ public class Users implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Role> roles;
+    @OneToMany(mappedBy = "users")
+    private List<Comentario> comentarios;
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
 
     public Users() {
     }
 
-    public Users(Long id, String name, String apellidos, int DNI, String correo, int telefono, String empresa, String username, String password, Boolean enabled, List<Role> roles) {
+    public Users(Long id, String name, String apellidos, int DNI, String correo, int telefono, String empresa, String username, String password, Boolean enabled, List<Role> roles, List<Comentario> comentarios) {
         Id = id;
         Name = name;
         Apellidos = apellidos;
@@ -46,6 +56,7 @@ public class Users implements Serializable {
         Password = password;
         this.enabled = enabled;
         this.roles = roles;
+        this.comentarios = comentarios;
     }
 
     public Long getId() {
