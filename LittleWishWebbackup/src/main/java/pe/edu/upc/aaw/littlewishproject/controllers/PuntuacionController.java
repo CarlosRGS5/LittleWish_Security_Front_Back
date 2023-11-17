@@ -14,17 +14,17 @@ import java.util.stream.Collectors;
 @RequestMapping("/puntuacion")
 public class PuntuacionController {
     @Autowired
-    private IPuntuacionService pU;
+    private IPuntuacionService pS;
     @PostMapping
     public void insertar(@RequestBody PuntuacionDTO dto){
         ModelMapper m = new ModelMapper();
         Puntuacion u = m.map(dto, Puntuacion.class);
-        pU.insert(u);
+        pS.insert(u);
     }
 
     @GetMapping
     public List<PuntuacionDTO> listar() {
-        return pU.list().stream().map(x -> {
+        return pS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, PuntuacionDTO.class);
         }).collect(Collectors.toList());
@@ -32,7 +32,7 @@ public class PuntuacionController {
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
-        pU.delete(id);
+        pS.delete(id);
     }
 
 }

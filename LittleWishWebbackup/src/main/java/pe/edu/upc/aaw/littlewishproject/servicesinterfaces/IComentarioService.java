@@ -10,6 +10,8 @@ public interface IComentarioService {
 
     public List<Comentario> list();
 
+    public List<Comentario> listByUser(Long idUser);
+
     public void delete(int idComentario);
 
 }

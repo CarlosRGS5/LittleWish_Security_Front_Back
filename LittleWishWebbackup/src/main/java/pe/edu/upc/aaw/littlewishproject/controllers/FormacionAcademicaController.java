@@ -30,8 +30,8 @@ public class FormacionAcademicaController {
             return m.map(x, FormacionAcademicaDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
         faS.delete(id);
     }
     @PutMapping
@@ -39,5 +39,11 @@ public class FormacionAcademicaController {
         ModelMapper m = new ModelMapper();
         FormacionAcademica fa = m.map(dto, FormacionAcademica.class);
         faS.insert(fa);
+    }
+    @GetMapping("/{id}")
+    public FormacionAcademicaDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        FormacionAcademicaDTO dto=m.map(faS.listarId(id),FormacionAcademicaDTO.class);
+        return dto;
     }
 }

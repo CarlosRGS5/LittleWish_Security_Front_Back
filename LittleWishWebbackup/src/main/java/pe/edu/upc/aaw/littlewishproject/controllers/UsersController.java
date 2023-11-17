@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.littlewishproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.littlewishproject.dtos.ComentarioDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.UsersDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Users;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUserService;
@@ -29,6 +30,16 @@ public class UsersController {
             ModelMapper m = new ModelMapper();
             return m.map(x, UsersDTO.class);
         }).collect(Collectors.toList());
+    }
+
+
+    @GetMapping("/{username}")
+   // public List<ComentarioDTO> listByUser(@PathVariable("id") Long idUser)
+    public UsersDTO obtenerUsuarioxUsername(@PathVariable("username") String username) {
+        ModelMapper m = new ModelMapper();
+        UsersDTO u = m.map(uS.obtenerUsuarioxUsername(username), UsersDTO.class);
+        return u;
+
     }
     @PutMapping
     public void modificar(@RequestBody UsersDTO dto) {

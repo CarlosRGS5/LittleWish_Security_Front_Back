@@ -3,7 +3,7 @@ package pe.edu.upc.aaw.littlewishproject.dtos;
 import javax.persistence.Column;
 
 public class IdiomasDTO {
-    private int ID_Idiomas;
+    private Long idIdiomas;
 
     private String idiomas;
 
@@ -11,12 +11,12 @@ public class IdiomasDTO {
 
     private String nivelOral;
 
-    public int getID_Idiomas() {
-        return ID_Idiomas;
+    public Long getID_Idiomas() {
+        return idIdiomas;
     }
 
-    public void setID_Idiomas(int ID_Idiomas) {
-        this.ID_Idiomas = ID_Idiomas;
+    public void setID_Idiomas(Long ID_Idiomas) {
+        this.idIdiomas = ID_Idiomas;
     }
 
     public String getIdiomas() {

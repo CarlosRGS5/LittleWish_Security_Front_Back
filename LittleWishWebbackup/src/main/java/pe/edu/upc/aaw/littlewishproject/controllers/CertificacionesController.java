@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/certifiaciones")
+@RequestMapping("/certificaciones")
 public class CertificacionesController {
     @Autowired
     private ICertificacionesService cS;
@@ -31,7 +31,7 @@ public class CertificacionesController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    public void eliminar(@RequestParam("id") Long id) {
         cS.delete(id);
     }
 
