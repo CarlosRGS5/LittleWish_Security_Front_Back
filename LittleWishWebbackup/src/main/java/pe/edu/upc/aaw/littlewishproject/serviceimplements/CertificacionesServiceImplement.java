@@ -25,7 +25,7 @@ public class CertificacionesServiceImplement implements ICertificacionesService 
     }
 
     @Override
-    public void delete(int ID_Certificaciones) {
+    public void delete(Long ID_Certificaciones) {
         cR.deleteById(ID_Certificaciones);
     }
 }

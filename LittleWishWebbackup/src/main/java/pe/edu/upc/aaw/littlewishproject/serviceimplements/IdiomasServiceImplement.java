@@ -24,7 +24,7 @@ public class IdiomasServiceImplement implements IIdiomasService {
     }
 
     @Override
-    public void delete(int ID_Idiomas) {
+    public void delete(Long ID_Idiomas) {
         iR.deleteById(ID_Idiomas);
     }
 }
