@@ -3,17 +3,17 @@ package pe.edu.upc.aaw.littlewishproject.dtos;
 import java.time.LocalDate;
 
 public class UniversidadesDTO {
-    private int ID_Universidad;
+    private int idUniversidad;
     private String nameUniversidades;
-    private LocalDate FechaIngreso;
-    private LocalDate FechaEgreso;
+    private LocalDate fechaIngreso;
+    private LocalDate fechaEgreso;
 
-    public int getID_Universidad() {
-        return ID_Universidad;
+    public int getIdUniversidad() {
+        return idUniversidad;
     }
 
-    public void setID_Universidad(int ID_Universidad) {
-        this.ID_Universidad = ID_Universidad;
+    public void setIdUniversidad(int idUniversidad) {
+        this.idUniversidad = idUniversidad;
     }
 
     public String getNameUniversidades() {
@@ -25,18 +25,18 @@ public class UniversidadesDTO {
     }
 
     public LocalDate getFechaIngreso() {
-        return FechaIngreso;
+        return fechaIngreso;
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
-        FechaIngreso = fechaIngreso;
+        this.fechaIngreso = fechaIngreso;
     }
 
     public LocalDate getFechaEgreso() {
-        return FechaEgreso;
+        return fechaEgreso;
     }
 
     public void setFechaEgreso(LocalDate fechaEgreso) {
-        FechaEgreso = fechaEgreso;
+        this.fechaEgreso = fechaEgreso;
     }
 }
