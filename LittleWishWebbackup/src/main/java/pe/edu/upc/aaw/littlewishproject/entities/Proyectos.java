@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class Proyectos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_proyecto;
+    private int idproyecto;
     @Column(name = "nombre", length = 45, nullable = false)
     private String nombre;
     @Column(name = "descripcion", length = 300, nullable = false)
@@ -34,8 +34,8 @@ public class Proyectos {
     public Proyectos() {
     }
 
-    public Proyectos(int id_proyecto, String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, String puestrobuscado, Puntuacion puntuacion, Comentario comentario, Users users) {
-        this.id_proyecto = id_proyecto;
+    public Proyectos(int idproyecto, String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, String puestrobuscado, Puntuacion puntuacion, Comentario comentario, Users users) {
+        this.idproyecto = idproyecto;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
@@ -47,11 +47,11 @@ public class Proyectos {
     }
 
     public int getId_proyecto() {
-        return id_proyecto;
+        return idproyecto;
     }
 
     public void setId_proyecto(int id_proyecto) {
-        this.id_proyecto = id_proyecto;
+        this.idproyecto = id_proyecto;
     }
 
     public String getNombre() {

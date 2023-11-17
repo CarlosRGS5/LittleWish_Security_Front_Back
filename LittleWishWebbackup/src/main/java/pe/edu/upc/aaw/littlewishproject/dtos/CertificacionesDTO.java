@@ -4,19 +4,19 @@ import javax.persistence.Column;
 import java.time.LocalDate;
 
 public class CertificacionesDTO {
-    private int ID_Certificaciones;
+    private Long idCertificaciones;
     private String nombreCertificaciones;
     private String empresaEmisora;
     private LocalDate fechaExpedicion;
     private LocalDate fechaCaducidad;
     private String urlCredencial;
 
-    public int getID_Certificaciones() {
-        return ID_Certificaciones;
+    public Long getID_Certificaciones() {
+        return idCertificaciones;
     }
 
-    public void setID_Certificaciones(int ID_Certificaciones) {
-        this.ID_Certificaciones = ID_Certificaciones;
+    public void setID_Certificaciones(Long idCertificaciones) {
+        this.idCertificaciones = idCertificaciones;
     }
 
     public String getNombreCertificaciones() {

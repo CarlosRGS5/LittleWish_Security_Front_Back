@@ -7,5 +7,5 @@ import java.util.List;
 public interface IIdiomasService {
     public void insert(Idiomas idiomas);
     public List<Idiomas> list();
-    public void delete(int ID_Idiomas);
+    public void delete(Long ID_Idiomas);
 }
