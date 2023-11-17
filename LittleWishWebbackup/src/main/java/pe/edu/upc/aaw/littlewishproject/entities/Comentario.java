@@ -14,13 +14,27 @@ public class Comentario {
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
+    @ManyToOne
+    @JoinColumn(name = "user_receptor_id", nullable = false)
+    private Users usersR;
+
     public Comentario() {
     }
 
-    public Comentario(int idComentario, String comentario, Users users) {
+
+    public Users getUsersR() {
+        return usersR;
+    }
+
+    public void setUsersR(Users usersR) {
+        this.usersR = usersR;
+    }
+
+    public Comentario(int idComentario, String comentario, Users users, Users usersR) {
         this.idComentario = idComentario;
         this.comentario = comentario;
         this.users = users;
+        this.usersR = usersR;
     }
 
     public int getIdComentario() {
@@ -47,3 +61,7 @@ public class Comentario {
         this.users = users;
     }
 }
+
+
+
+

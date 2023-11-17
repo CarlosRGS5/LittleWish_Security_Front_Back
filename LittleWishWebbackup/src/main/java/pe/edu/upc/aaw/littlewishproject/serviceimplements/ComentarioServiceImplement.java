@@ -8,6 +8,7 @@ import pe.edu.upc.aaw.littlewishproject.repositories.IComentarioRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IComentarioService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ComentarioServiceImplement implements IComentarioService {
@@ -22,6 +23,12 @@ public class ComentarioServiceImplement implements IComentarioService {
     public List<Comentario> list(){
         return cR.findAll();
     }
+
+    @Override
+    public List<Comentario> listByUser(Long idUser){
+        return cR.findAll().stream().filter(comentario -> comentario.getUsers().getId() == idUser).collect(Collectors.toList());
+        //return cR.findAll();
+        }
 
     @Override
     public void delete(int idUniversity){

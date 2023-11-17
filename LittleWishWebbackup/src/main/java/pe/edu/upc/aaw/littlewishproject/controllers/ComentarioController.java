@@ -23,12 +23,21 @@ public class ComentarioController {
         cS.insert(u);
     }
 
+    @GetMapping("/{id}")
+    public List<ComentarioDTO> listByUser(@PathVariable("id") Long idUser) {
+        return cS.listByUser(idUser).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, ComentarioDTO.class);
+        }).collect(Collectors.toList());
+    }
+
     @GetMapping
     public List<ComentarioDTO> listar() {
         return cS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, ComentarioDTO.class);
         }).collect(Collectors.toList());
+
     }
 
     @DeleteMapping("/{id}")

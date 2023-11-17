@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.littlewishproject.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.littlewishproject.dtos.UsersDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Users;
 import pe.edu.upc.aaw.littlewishproject.repositories.UserRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUserService;
@@ -22,4 +23,7 @@ public class UserServiceImplement implements IUserService {
     public List<Users> list() {
         return uR.findAll();
     }
+
+    @Override
+    public Users obtenerUsuarioxUsername(String username){ return uR.findByUsername(username);}
 }
