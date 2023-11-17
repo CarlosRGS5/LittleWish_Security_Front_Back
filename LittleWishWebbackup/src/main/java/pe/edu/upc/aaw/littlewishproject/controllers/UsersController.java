@@ -17,7 +17,7 @@ public class UsersController {
     private IUserService uS;
 
     @PostMapping
-    public void Registrar(@RequestBody UsersDTO dto) {
+    public void registrar(@RequestBody UsersDTO dto) {
         ModelMapper m = new ModelMapper();
         Users u = m.map(dto, Users.class);
         uS.insert(u);
@@ -35,5 +35,15 @@ public class UsersController {
         ModelMapper m = new ModelMapper();
         Users u = m.map(dto, Users.class);
         uS.insert(u);
+    }
+    @GetMapping("/{id}")
+    public UsersDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        UsersDTO dto=m.map(uS.listarId(id),UsersDTO.class);
+        return dto;
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        uS.delete(id);
     }
 }

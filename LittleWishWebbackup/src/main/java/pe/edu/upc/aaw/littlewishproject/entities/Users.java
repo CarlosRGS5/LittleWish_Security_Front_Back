@@ -9,7 +9,7 @@ import java.util.List;
 public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     @Column(name = "Name", length = 45, nullable = false)
     private String Name;
     @Column(name = "Apellidos", length = 45, nullable = false)
@@ -35,7 +35,7 @@ public class Users implements Serializable {
     }
 
     public Users(Long id, String name, String apellidos, int DNI, String correo, int telefono, String empresa, String username, String password, Boolean enabled, List<Role> roles) {
-        Id = id;
+        this.id = id;
         Name = name;
         Apellidos = apellidos;
         this.DNI = DNI;
@@ -49,11 +49,11 @@ public class Users implements Serializable {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {

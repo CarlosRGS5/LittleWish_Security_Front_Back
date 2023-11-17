@@ -22,4 +22,15 @@ public class UserServiceImplement implements IUserService {
     public List<Users> list() {
         return uR.findAll();
     }
+
+    @Override
+    public void delete(long id) {
+        uR.deleteById(id);
+    }
+
+    @Override
+    public Users listarId(long id) {
+        return null;
+    }
+
 }
