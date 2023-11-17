@@ -35,7 +35,7 @@ public class UserServiceImplement implements IUserService {
         return null;
     }
 
-
+    @Override
     public Users obtenerUsuarioxUsername(String username){ return uR.findByUsername(username);}
 
 }
