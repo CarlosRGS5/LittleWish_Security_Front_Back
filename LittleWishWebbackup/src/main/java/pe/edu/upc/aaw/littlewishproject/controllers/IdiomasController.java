@@ -31,7 +31,7 @@ public class IdiomasController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    public void eliminar(@RequestParam("id") Long id) {
         iS.delete(id);
     }
     @PutMapping

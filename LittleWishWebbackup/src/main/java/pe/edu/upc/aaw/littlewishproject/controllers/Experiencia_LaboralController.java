@@ -32,7 +32,7 @@ public class Experiencia_LaboralController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    public void eliminar(@RequestParam("id") Long id) {
         elS.delete(id);
     }
     @PutMapping
