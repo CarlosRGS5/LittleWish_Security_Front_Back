@@ -30,8 +30,8 @@ public class CarrerasController {
             return m.map(x, CarrerasDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
         cS.delete(id);
     }
 
@@ -40,5 +40,11 @@ public class CarrerasController {
         ModelMapper m = new ModelMapper();
         Carreras c = m.map(dto, Carreras.class);
         cS.insert(c);
+    }
+    @GetMapping("/{id}")
+    public CarrerasDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        CarrerasDTO dto=m.map(cS.listarId(id),CarrerasDTO.class);
+        return dto;
     }
 }
