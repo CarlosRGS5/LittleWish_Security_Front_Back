@@ -8,4 +8,5 @@ public interface IFormacion_AcademicaService {
     public void insert(FormacionAcademica formacion_academica);
     public List<FormacionAcademica> list();
     public void delete(int ID_Formacion_Academica);
+    public FormacionAcademica listarId(int ID_Formacion_Academica);
 }
