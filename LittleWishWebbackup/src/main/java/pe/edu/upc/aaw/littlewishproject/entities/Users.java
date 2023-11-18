@@ -33,6 +33,18 @@ public class Users implements Serializable {
     @OneToMany(mappedBy = "users")
     private List<Comentario> comentarios;
 
+    @OneToMany(mappedBy = "users")
+    private List<Puntuacion> puntuacions;
+
+
+    public List<Puntuacion> getPuntuacions() {
+        return puntuacions;
+    }
+
+    public void setPuntuacions(List<Puntuacion> puntuacions) {
+        this.puntuacions = puntuacions;
+    }
+
     public List<Comentario> getComentarios() {
         return comentarios;
     }
@@ -44,7 +56,7 @@ public class Users implements Serializable {
     public Users() {
     }
 
-    public Users(Long id, String name, String apellidos, int DNI, String correo, int telefono, String empresa, String username, String password, Boolean enabled, List<Role> roles, List<Comentario> comentarios) {
+    public Users(Long id, String name, String apellidos, int DNI, String correo, int telefono, String empresa, String username, String password, Boolean enabled, List<Role> roles, List<Comentario> comentarios, List<Puntuacion> puntuacions) {
         Id = id;
         Name = name;
         Apellidos = apellidos;
@@ -57,6 +69,7 @@ public class Users implements Serializable {
         this.enabled = enabled;
         this.roles = roles;
         this.comentarios = comentarios;
+        this.puntuacions = puntuacions;
     }
 
     public Long getId() {

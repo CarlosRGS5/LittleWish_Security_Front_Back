@@ -13,6 +13,16 @@ public class ComentarioDTO {
 
     private UsersDTO usersR;
 
+    private int puntuacion;
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
+    }
+
     public UsersDTO getUsersR() {
         return usersR;
     }

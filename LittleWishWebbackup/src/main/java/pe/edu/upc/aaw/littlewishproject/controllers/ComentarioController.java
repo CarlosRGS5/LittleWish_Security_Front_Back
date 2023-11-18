@@ -24,7 +24,7 @@ public class ComentarioController {
     }
 
     @GetMapping("/{id}")
-    public List<ComentarioDTO> listByUser(@PathVariable("id") Long idUser) {
+    public List<ComentarioDTO> listByUser(@PathVariable("id") Integer idUser) {
         return cS.listByUser(idUser).stream().map(x -> {
             ModelMapper m = new ModelMapper();
             return m.map(x, ComentarioDTO.class);

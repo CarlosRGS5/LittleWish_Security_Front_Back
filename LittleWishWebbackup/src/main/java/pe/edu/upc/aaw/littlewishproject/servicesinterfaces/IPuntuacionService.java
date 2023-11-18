@@ -11,4 +11,6 @@ public interface IPuntuacionService {
 
     public void delete(int idUniversity);
 
+    public List<Puntuacion> listByUser(int idUser);
+
 }

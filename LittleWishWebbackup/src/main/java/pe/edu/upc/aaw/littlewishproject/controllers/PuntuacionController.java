@@ -22,6 +22,14 @@ public class PuntuacionController {
         pS.insert(u);
     }
 
+    @GetMapping("/{id}")
+    public List<PuntuacionDTO> listByUser(@PathVariable("id") Integer idUser) {
+        return pS.listByUser(idUser).stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, PuntuacionDTO.class);
+        }).collect(Collectors.toList());
+    }
+
     @GetMapping
     public List<PuntuacionDTO> listar() {
         return pS.list().stream().map(x -> {

@@ -4,6 +4,7 @@ package pe.edu.upc.aaw.littlewishproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.littlewishproject.entities.Comentario;
+import pe.edu.upc.aaw.littlewishproject.entities.Puntuacion;
 import pe.edu.upc.aaw.littlewishproject.repositories.IComentarioRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IComentarioService;
 
@@ -24,11 +25,12 @@ public class ComentarioServiceImplement implements IComentarioService {
         return cR.findAll();
     }
 
+
     @Override
-    public List<Comentario> listByUser(Long idUser){
-        return cR.findAll().stream().filter(comentario -> comentario.getUsers().getId() == idUser).collect(Collectors.toList());
+    public List<Comentario> listByUser(int idUser){
+        return cR.findAll().stream().filter(comentario -> comentario.getUsersR().getId() == idUser).collect(Collectors.toList());
         //return cR.findAll();
-        }
+    }
 
     @Override
     public void delete(int idUniversity){

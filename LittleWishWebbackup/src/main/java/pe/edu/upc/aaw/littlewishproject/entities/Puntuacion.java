@@ -14,13 +14,26 @@ public class Puntuacion {
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
 
+    @ManyToOne
+    @JoinColumn(name = "user_receptor_id", nullable = false)
+    private Users usersR;
+
     public Puntuacion() {
     }
 
-    public Puntuacion(int idPuntuacion, int puntos, Users users) {
+    public Puntuacion(int idPuntuacion, int puntos, Users users, Users usersR) {
         this.idPuntuacion = idPuntuacion;
         this.puntos = puntos;
         this.users = users;
+        this.usersR = usersR;
+    }
+
+    public Users getUsersR() {
+        return usersR;
+    }
+
+    public void setUsersR(Users usersR) {
+        this.usersR = usersR;
     }
 
     public int getIdPuntuacion() {
