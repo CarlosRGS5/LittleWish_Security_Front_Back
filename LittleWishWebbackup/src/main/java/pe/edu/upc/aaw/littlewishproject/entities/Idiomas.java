@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Idiomas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_Idiomas;
+    private Long idIdiomas;
 
     @Column(name = "idiomas", length = 45, nullable = false)
     private String idiomas;
@@ -21,19 +21,19 @@ public class Idiomas {
     public Idiomas() {
     }
 
-    public Idiomas(int ID_Idiomas, String idiomas, String nivelEscrito, String nivelOral) {
-        this.ID_Idiomas = ID_Idiomas;
+    public Idiomas(Long ID_Idiomas, String idiomas, String nivelEscrito, String nivelOral) {
+        this.idIdiomas = ID_Idiomas;
         this.idiomas = idiomas;
         this.nivelEscrito = nivelEscrito;
         this.nivelOral = nivelOral;
     }
 
-    public int getID_Idiomas() {
-        return ID_Idiomas;
+    public Long getID_Idiomas() {
+        return idIdiomas;
     }
 
-    public void setID_Idiomas(int ID_Idiomas) {
-        this.ID_Idiomas = ID_Idiomas;
+    public void setID_Idiomas(Long ID_Idiomas) {
+        this.idIdiomas = ID_Idiomas;
     }
 
     public String getIdiomas() {

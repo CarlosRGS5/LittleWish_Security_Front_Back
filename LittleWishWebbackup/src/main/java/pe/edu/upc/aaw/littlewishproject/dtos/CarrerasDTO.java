@@ -3,14 +3,15 @@ package pe.edu.upc.aaw.littlewishproject.dtos;
 import javax.persistence.Column;
 
 public class CarrerasDTO {
-    private int ID_Carrera;
+    private int idCarrera;
     private String nameCarreras;
-    public int getID_Carrera() {
-        return ID_Carrera;
+
+    public int getIdCarrera() {
+        return idCarrera;
     }
 
-    public void setID_Carrera(int ID_Carrera) {
-        this.ID_Carrera = ID_Carrera;
+    public void setIdCarrera(int idCarrera) {
+        this.idCarrera = idCarrera;
     }
 
     public String getNameCarreras() {

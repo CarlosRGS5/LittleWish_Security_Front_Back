@@ -31,8 +31,8 @@ public class CurriculumVitaeController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
         cvS.delete(id);
     }
 
@@ -41,5 +41,11 @@ public class CurriculumVitaeController {
         ModelMapper m = new ModelMapper();
         CurriculumVitae c = m.map(dto, CurriculumVitae.class);
         cvS.insert(c);
+    }
+    @GetMapping("/{id}")
+    public CurriculumVitaeDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        CurriculumVitaeDTO dto=m.map(cvS.listarId(id),CurriculumVitaeDTO.class);
+        return dto;
     }
 }

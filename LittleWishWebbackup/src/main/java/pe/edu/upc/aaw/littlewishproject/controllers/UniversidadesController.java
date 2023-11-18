@@ -31,8 +31,8 @@ public class UniversidadesController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Integer id) {
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
         uS.delete(id);
     }
 
@@ -41,5 +41,11 @@ public class UniversidadesController {
         ModelMapper m = new ModelMapper();
         Universidades u = m.map(dto, Universidades.class);
         uS.insert(u);
+    }
+    @GetMapping("/{id}")
+    public UniversidadesDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        UniversidadesDTO dto=m.map(uS.listarId(id),UniversidadesDTO.class);
+        return dto;
     }
 }
