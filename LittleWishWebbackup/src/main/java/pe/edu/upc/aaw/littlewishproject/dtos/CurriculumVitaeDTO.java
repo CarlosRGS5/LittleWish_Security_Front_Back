@@ -3,19 +3,18 @@ package pe.edu.upc.aaw.littlewishproject.dtos;
 import pe.edu.upc.aaw.littlewishproject.entities.*;
 
 public class CurriculumVitaeDTO {
-    private int id_cv;
+    private int idCv;
     private Idiomas idiomas;
     private Certificaciones certificaciones;
     private Experiencia_Laboral experiencia_laboral;
-    private FormacionAcademica formacion_academica;
-    private UsersDTO users;
+    private FormacionAcademica formacionAcademica;
 
-    public int getId_cv() {
-        return id_cv;
+    public int getIdCv() {
+        return idCv;
     }
 
-    public void setId_cv(int id_cv) {
-        this.id_cv = id_cv;
+    public void setIdCv(int idCv) {
+        this.idCv = idCv;
     }
 
     public Idiomas getIdiomas() {
@@ -42,19 +41,11 @@ public class CurriculumVitaeDTO {
         this.experiencia_laboral = experiencia_laboral;
     }
 
-    public FormacionAcademica getFormacion_academica() {
-        return formacion_academica;
+    public FormacionAcademica getFormacionAcademica() {
+        return formacionAcademica;
     }
 
-    public void setFormacion_academica(FormacionAcademica formacion_academica) {
-        this.formacion_academica = formacion_academica;
-    }
-
-    public UsersDTO getUsers() {
-        return users;
-    }
-
-    public void setUsers(UsersDTO users) {
-        this.users = users;
+    public void setFormacionAcademica(FormacionAcademica formacionAcademica) {
+        this.formacionAcademica = formacionAcademica;
     }
 }

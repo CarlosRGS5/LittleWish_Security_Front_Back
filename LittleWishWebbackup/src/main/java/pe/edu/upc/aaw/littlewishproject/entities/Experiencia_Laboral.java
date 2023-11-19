@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Experiencia_Laboral {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idExperiencia_laboral;
+    private int ID_Experiencia_laboral;
     @Column(name = "Empresa", length = 45, nullable = false)
     private String Empresa;
 
@@ -24,20 +24,20 @@ public class Experiencia_Laboral {
     public Experiencia_Laboral() {
     }
 
-    public Experiencia_Laboral(Long ID_Experiencia_laboral, String empresa, String cargo, LocalDate fechaInicio, LocalDate fechaFinalizado) {
-        this.idExperiencia_laboral = ID_Experiencia_laboral;
+    public Experiencia_Laboral(int ID_Experiencia_laboral, String empresa, String cargo, LocalDate fechaInicio, LocalDate fechaFinalizado) {
+        this.ID_Experiencia_laboral = ID_Experiencia_laboral;
         Empresa = empresa;
         Cargo = cargo;
         FechaInicio = fechaInicio;
         FechaFinalizado = fechaFinalizado;
     }
 
-    public Long getID_Experiencia_laboral() {
-        return idExperiencia_laboral;
+    public int getID_Experiencia_laboral() {
+        return ID_Experiencia_laboral;
     }
 
-    public void setID_Experiencia_laboral(Long ID_Experiencia_laboral) {
-        this.idExperiencia_laboral = ID_Experiencia_laboral;
+    public void setID_Experiencia_laboral(int ID_Experiencia_laboral) {
+        this.ID_Experiencia_laboral = ID_Experiencia_laboral;
     }
 
     public String getEmpresa() {

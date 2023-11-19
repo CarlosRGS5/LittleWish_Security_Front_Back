@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.littlewishproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.littlewishproject.dtos.CarrerasDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.UniversidadesDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Universidades;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUniversidadesService;
@@ -42,6 +43,7 @@ public class UniversidadesController {
         Universidades u = m.map(dto, Universidades.class);
         uS.insert(u);
     }
+
     @GetMapping("/{id}")
     public UniversidadesDTO listarId(@PathVariable("id") Integer id) {
         ModelMapper m=new ModelMapper();

@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.littlewishproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.littlewishproject.dtos.CarrerasDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.FormacionAcademicaDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.FormacionAcademica;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IFormacion_AcademicaService;
@@ -34,12 +35,14 @@ public class FormacionAcademicaController {
     public void eliminar(@PathVariable("id") Integer id) {
         faS.delete(id);
     }
+
     @PutMapping
     public void modificar(@RequestBody FormacionAcademicaDTO dto) {
         ModelMapper m = new ModelMapper();
         FormacionAcademica fa = m.map(dto, FormacionAcademica.class);
         faS.insert(fa);
     }
+
     @GetMapping("/{id}")
     public FormacionAcademicaDTO listarId(@PathVariable("id") Integer id) {
         ModelMapper m=new ModelMapper();

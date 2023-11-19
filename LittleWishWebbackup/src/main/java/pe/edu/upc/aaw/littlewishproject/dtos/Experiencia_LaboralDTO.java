@@ -1,21 +1,20 @@
 package pe.edu.upc.aaw.littlewishproject.dtos;
 
-import javax.persistence.Column;
 import java.time.LocalDate;
 
 public class Experiencia_LaboralDTO {
-    private Long idExperiencia_laboral;
+    private int ID_Experiencia_laboral;
     private String Empresa;
     private String Cargo;
     private LocalDate FechaInicio;
     private LocalDate FechaFinalizado;
 
-    public Long getID_Experiencia_laboral() {
-        return idExperiencia_laboral;
+    public int getID_Experiencia_laboral() {
+        return ID_Experiencia_laboral;
     }
 
-    public void setID_Experiencia_laboral(Long ID_Experiencia_laboral) {
-        this.idExperiencia_laboral = ID_Experiencia_laboral;
+    public void setID_Experiencia_laboral(int ID_Experiencia_laboral) {
+        this.ID_Experiencia_laboral = ID_Experiencia_laboral;
     }
 
     public String getEmpresa() {

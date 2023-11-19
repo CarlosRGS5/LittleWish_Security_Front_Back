@@ -8,13 +8,13 @@ public class FormacionAcademica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFormacionAcademica;
-    @Column(name = "Nombre_Secundaria", length = 45, nullable = false)
+    @Column(name = "nombreSecundaria", length = 45, nullable = false)
     private String nombreSecundaria;
     @ManyToOne
-    @JoinColumn(name = "ID_Universidad")
+    @JoinColumn(name = "idUniversidad")
     private Universidades universidades;
     @ManyToOne
-    @JoinColumn(name = "ID_Carrera")
+    @JoinColumn(name = "idCarrera")
     private Carreras carreras;
 
     public FormacionAcademica() {

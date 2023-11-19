@@ -24,11 +24,13 @@ public class CarrerasServiceImplement implements ICarrerasService {
     }
 
     @Override
-    public void delete(int ID_Carreras) {
-        cR.deleteById(ID_Carreras);
+    public void delete(int idCarrera) {
+        cR.deleteById(idCarrera);
     }
+
     @Override
     public Carreras listarId(int idCarrera)  {
         return cR.findById(idCarrera).orElse(new Carreras());
     }
+
 }

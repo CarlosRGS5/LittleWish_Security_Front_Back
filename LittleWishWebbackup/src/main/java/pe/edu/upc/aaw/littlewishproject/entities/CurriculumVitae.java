@@ -7,41 +7,38 @@ import javax.persistence.*;
 public class CurriculumVitae {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_cv;
+    @Column(name = "idCv")
+    private int idCv;
     @ManyToOne
-    @JoinColumn(name = "ID_Idiomas",nullable = false)
+    @JoinColumn(name = "ID_Idiomas")
     private Idiomas idiomas;
     @ManyToOne
-    @JoinColumn(name = "ID_Certifaciones",nullable = false)
+    @JoinColumn(name = "ID_Certifaciones")
     private Certificaciones certificaciones;
     @ManyToOne
-    @JoinColumn(name = "ID_Experiencia_Laboral",nullable = false)
+    @JoinColumn(name = "ID_Experiencia_Laboral")
     private Experiencia_Laboral experiencia_laboral;
     @ManyToOne
-    @JoinColumn(name = "ID_Formacion_academica",nullable = false)
-    private FormacionAcademica formacion_academica;
-    @OneToOne
-    @JoinColumn(name = "user_id",nullable = false)
-    private Users users;
+    @JoinColumn(name = "FormacionAcademica")
+    private FormacionAcademica formacionAcademica;
 
     public CurriculumVitae() {
     }
 
-    public CurriculumVitae(int id_cv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, FormacionAcademica formacion_academica, Users users) {
-        this.id_cv = id_cv;
+    public CurriculumVitae(int idCv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, FormacionAcademica formacionAcademica) {
+        this.idCv = idCv;
         this.idiomas = idiomas;
         this.certificaciones = certificaciones;
         this.experiencia_laboral = experiencia_laboral;
-        this.formacion_academica = formacion_academica;
-        this.users = users;
+        this.formacionAcademica = formacionAcademica;
     }
 
-    public int getId_cv() {
-        return id_cv;
+    public int getIdCv() {
+        return idCv;
     }
 
-    public void setId_cv(int id_cv) {
-        this.id_cv = id_cv;
+    public void setIdCv(int idCv) {
+        this.idCv = idCv;
     }
 
     public Idiomas getIdiomas() {
@@ -68,19 +65,11 @@ public class CurriculumVitae {
         this.experiencia_laboral = experiencia_laboral;
     }
 
-    public FormacionAcademica getFormacion_academica() {
-        return formacion_academica;
+    public FormacionAcademica getFormacionAcademica() {
+        return formacionAcademica;
     }
 
-    public void setFormacion_academica(FormacionAcademica formacion_academica) {
-        this.formacion_academica = formacion_academica;
-    }
-
-    public Users getUsers() {
-        return users;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setFormacionAcademica(FormacionAcademica formacionAcademica) {
+        this.formacionAcademica = formacionAcademica;
     }
 }

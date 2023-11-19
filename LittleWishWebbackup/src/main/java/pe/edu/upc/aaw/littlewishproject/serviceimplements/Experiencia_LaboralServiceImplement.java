@@ -24,7 +24,12 @@ public class Experiencia_LaboralServiceImplement implements IExperiencia_Laboral
     }
 
     @Override
-    public void delete(Long ID_Experiencia_Laboral) {
+    public void delete(int ID_Experiencia_Laboral) {
         elR.deleteById(ID_Experiencia_Laboral);
+    }
+
+    @Override
+    public Experiencia_Laboral listId(int ID_Experiencia_Laboral) {
+        return elR.findById(ID_Experiencia_Laboral).orElse(new Experiencia_Laboral());
     }
 }

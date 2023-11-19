@@ -25,7 +25,12 @@ public class CertificacionesServiceImplement implements ICertificacionesService 
     }
 
     @Override
-    public void delete(Long ID_Certificaciones) {
+    public Certificaciones listId(int id) {
+        return cR.findById(id).orElse(new Certificaciones());
+    }
+
+    @Override
+    public void delete(int ID_Certificaciones) {
         cR.deleteById(ID_Certificaciones);
     }
 }

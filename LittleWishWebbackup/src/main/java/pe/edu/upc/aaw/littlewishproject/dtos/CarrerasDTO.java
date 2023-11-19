@@ -1,7 +1,5 @@
 package pe.edu.upc.aaw.littlewishproject.dtos;
 
-import javax.persistence.Column;
-
 public class CarrerasDTO {
     private int idCarrera;
     private String nameCarreras;

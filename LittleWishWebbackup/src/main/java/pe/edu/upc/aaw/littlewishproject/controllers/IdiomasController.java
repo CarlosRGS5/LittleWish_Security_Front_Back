@@ -30,8 +30,21 @@ public class IdiomasController {
             return m.map(x, IdiomasDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Long id) {
+    @GetMapping("/{id}")
+    public IdiomasDTO getIdiomaById(@PathVariable int id) {
+        Idiomas idioma = iS.listId(id);
+
+        IdiomasDTO idiomaDTO = new IdiomasDTO();
+        idiomaDTO.setID_Idiomas(idioma.getID_Idiomas());
+        idiomaDTO.setIdiomas(idioma.getIdiomas());
+        idiomaDTO.setNivelEscrito(idioma.getNivelEscrito());
+        idiomaDTO.setNivelOral(idioma.getNivelOral());
+
+        return idiomaDTO;
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable int id) {
         iS.delete(id);
     }
     @PutMapping

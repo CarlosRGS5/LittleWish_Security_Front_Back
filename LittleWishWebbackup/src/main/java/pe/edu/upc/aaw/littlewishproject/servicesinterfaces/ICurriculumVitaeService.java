@@ -1,6 +1,7 @@
 package pe.edu.upc.aaw.littlewishproject.servicesinterfaces;
 
 import pe.edu.upc.aaw.littlewishproject.entities.CurriculumVitae;
+import pe.edu.upc.aaw.littlewishproject.entities.Universidades;
 
 import java.util.List;
 

@@ -32,7 +32,7 @@ public class Experiencia_LaboralController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping
-    public void eliminar(@RequestParam("id") Long id) {
+    public void eliminar(@RequestParam("id") Integer id) {
         elS.delete(id);
     }
     @PutMapping
@@ -41,4 +41,19 @@ public class Experiencia_LaboralController {
         Experiencia_Laboral exp = m.map(dto, Experiencia_Laboral.class);
         elS.insert(exp);
     }
+
+    @GetMapping("/{id}")
+    public Experiencia_LaboralDTO getExperienciaLaboralById(@PathVariable int id) {
+        Experiencia_Laboral experienciaLaboral = elS.listId(id);
+
+        Experiencia_LaboralDTO experienciaLaboralDTO = new Experiencia_LaboralDTO();
+        experienciaLaboralDTO.setID_Experiencia_laboral(experienciaLaboral.getID_Experiencia_laboral());
+        experienciaLaboralDTO.setEmpresa(experienciaLaboral.getEmpresa());
+        experienciaLaboralDTO.setCargo(experienciaLaboral.getCargo());
+        experienciaLaboralDTO.setFechaInicio(experienciaLaboral.getFechaInicio());
+        experienciaLaboralDTO.setFechaFinalizado(experienciaLaboral.getFechaFinalizado());
+
+        return experienciaLaboralDTO;
+    }
+
 }

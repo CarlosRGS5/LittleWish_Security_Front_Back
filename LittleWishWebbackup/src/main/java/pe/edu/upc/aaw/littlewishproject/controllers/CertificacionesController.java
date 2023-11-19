@@ -30,8 +30,24 @@ public class CertificacionesController {
             return m.map(x, CertificacionesDTO.class);
         }).collect(Collectors.toList());
     }
-    @DeleteMapping
-    public void eliminar(@RequestParam("id") Long id) {
+
+    @GetMapping("/{id}")
+    public CertificacionesDTO getCertificacionById(@PathVariable int id) {
+        Certificaciones certificacion = cS.listId(id);
+
+        CertificacionesDTO certificacionDTO = new CertificacionesDTO();
+        certificacionDTO.setID_Certificaciones(certificacion.getID_Certificaciones());
+        certificacionDTO.setNombreCertificaciones(certificacion.getNombreCertificaciones());
+        certificacionDTO.setEmpresaEmisora(certificacion.getEmpresaEmisora());
+        certificacionDTO.setFechaExpedicion(certificacion.getFechaExpedicion());
+        certificacionDTO.setFechaCaducidad(certificacion.getFechaCaducidad());
+        certificacionDTO.setUrlCredencial(certificacion.getUrlCredencial());
+
+        return certificacionDTO;
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
         cS.delete(id);
     }
 

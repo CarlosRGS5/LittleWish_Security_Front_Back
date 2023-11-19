@@ -2,13 +2,15 @@ package pe.edu.upc.aaw.littlewishproject.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 @Entity
 @Table(name = "Certificaciones")
 public class Certificaciones {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCertificaciones;
+    @Column(name = "ID_Certificaciones")
+    private int ID_Certificaciones;
 
     @Column(name = "nombreCertificaciones", length = 45, nullable = false)
     private String nombreCertificaciones;
@@ -28,8 +30,8 @@ public class Certificaciones {
     public Certificaciones() {
     }
 
-    public Certificaciones(Long ID_Certificaciones, String nombreCertificaciones, String empresaEmisora, LocalDate fechaExpedicion, LocalDate fechaCaducidad, String urlCredencial) {
-        this.idCertificaciones = ID_Certificaciones;
+    public Certificaciones(int ID_Certificaciones, String nombreCertificaciones, String empresaEmisora, LocalDate fechaExpedicion, LocalDate fechaCaducidad, String urlCredencial) {
+        this.ID_Certificaciones = ID_Certificaciones;
         this.nombreCertificaciones = nombreCertificaciones;
         this.empresaEmisora = empresaEmisora;
         this.fechaExpedicion = fechaExpedicion;
@@ -37,12 +39,12 @@ public class Certificaciones {
         this.urlCredencial = urlCredencial;
     }
 
-    public Long getID_Certificaciones() {
-        return idCertificaciones;
+    public int getID_Certificaciones() {
+        return ID_Certificaciones;
     }
 
-    public void setID_Certificaciones(Long ID_Certificaciones) {
-        this.idCertificaciones = ID_Certificaciones;
+    public void setID_Certificaciones(int ID_Certificaciones) {
+        this.ID_Certificaciones = ID_Certificaciones;
     }
 
     public String getNombreCertificaciones() {

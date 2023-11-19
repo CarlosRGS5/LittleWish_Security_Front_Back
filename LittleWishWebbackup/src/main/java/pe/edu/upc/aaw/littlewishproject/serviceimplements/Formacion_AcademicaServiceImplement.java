@@ -27,6 +27,7 @@ public class Formacion_AcademicaServiceImplement implements IFormacion_Academica
     public void delete(int ID_Formacion_Academica) {
         faR.deleteById(ID_Formacion_Academica);
     }
+
     @Override
     public FormacionAcademica listarId(int ID_Formacion_Academica) {
         return faR.findById(ID_Formacion_Academica).orElse(new FormacionAcademica());

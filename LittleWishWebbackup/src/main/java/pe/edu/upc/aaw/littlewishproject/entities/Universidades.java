@@ -11,9 +11,9 @@ public class Universidades {
     private int idUniversidad;
     @Column(name = "nameUniversidades", length = 45, nullable = false)
     private String nameUniversidades;
-    @Column(name = "FechaIngreso", nullable = false)
+    @Column(name = "fechaIngreso", nullable = false)
     private LocalDate fechaIngreso;
-    @Column(name = "FechaEgreso", nullable = false)
+    @Column(name = "fechaEgreso", nullable = false)
     private LocalDate fechaEgreso;
 
     public Universidades() {
