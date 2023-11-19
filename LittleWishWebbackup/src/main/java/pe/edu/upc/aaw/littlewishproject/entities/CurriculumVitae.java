@@ -21,16 +21,20 @@ public class CurriculumVitae {
     @ManyToOne
     @JoinColumn(name = "FormacionAcademica")
     private FormacionAcademica formacionAcademica;
+    @OneToOne
+    @JoinColumn(name = "user_id",nullable = false)
+    private Users users;
 
     public CurriculumVitae() {
     }
 
-    public CurriculumVitae(int idCv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, FormacionAcademica formacionAcademica) {
+    public CurriculumVitae(int idCv, Idiomas idiomas, Certificaciones certificaciones, Experiencia_Laboral experiencia_laboral, FormacionAcademica formacionAcademica, Users users) {
         this.idCv = idCv;
         this.idiomas = idiomas;
         this.certificaciones = certificaciones;
         this.experiencia_laboral = experiencia_laboral;
         this.formacionAcademica = formacionAcademica;
+        this.users = users;
     }
 
     public int getIdCv() {
@@ -71,5 +75,13 @@ public class CurriculumVitae {
 
     public void setFormacionAcademica(FormacionAcademica formacionAcademica) {
         this.formacionAcademica = formacionAcademica;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

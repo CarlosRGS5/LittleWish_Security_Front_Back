@@ -8,6 +8,7 @@ public class CurriculumVitaeDTO {
     private Certificaciones certificaciones;
     private Experiencia_Laboral experiencia_laboral;
     private FormacionAcademica formacionAcademica;
+    private UsersDTO users;
 
     public int getIdCv() {
         return idCv;
@@ -47,5 +48,13 @@ public class CurriculumVitaeDTO {
 
     public void setFormacionAcademica(FormacionAcademica formacionAcademica) {
         this.formacionAcademica = formacionAcademica;
+    }
+
+    public UsersDTO getUsers() {
+        return users;
+    }
+
+    public void setUsers(UsersDTO users) {
+        this.users = users;
     }
 }
