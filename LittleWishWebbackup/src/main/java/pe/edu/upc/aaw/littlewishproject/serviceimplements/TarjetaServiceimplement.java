@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.littlewishproject.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.littlewishproject.entities.Carreras;
 import pe.edu.upc.aaw.littlewishproject.entities.Tarjeta;
 import pe.edu.upc.aaw.littlewishproject.repositories.ITarjetaRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.ITarjetaService;
@@ -22,4 +23,15 @@ public class TarjetaServiceimplement implements ITarjetaService {
     public List<Tarjeta> list() {
         return tR.findAll();
     }
+
+    @Override
+    public Tarjeta listarId(int idTarjeta) {
+        return tR.findById(idTarjeta).orElse(new Tarjeta());
+    }
+
+    @Override
+    public void delete(int idTarjeta) {
+        tR.deleteById(idTarjeta);
+    }
+
 }
