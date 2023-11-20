@@ -21,12 +21,7 @@ public class Proyectos {
     private LocalDate fechaFin;
     @Column(name = "puestobuscado",nullable = false)
     private String puestrobuscado;
-    @OneToOne
-    @JoinColumn(name = "idPuntuacion",nullable = false)
-    private Puntuacion puntuacion;
-    @OneToOne
-    @JoinColumn(name = "idComentario",nullable = false)
-    private Comentario comentario;
+
     @ManyToOne
     @JoinColumn(name = "user_id",nullable = false)
     private Users users;
@@ -34,24 +29,22 @@ public class Proyectos {
     public Proyectos() {
     }
 
-    public Proyectos(int idproyecto, String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, String puestrobuscado, Puntuacion puntuacion, Comentario comentario, Users users) {
+    public Proyectos(int idproyecto, String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, String puestrobuscado, Users users) {
         this.idproyecto = idproyecto;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.puestrobuscado = puestrobuscado;
-        this.puntuacion = puntuacion;
-        this.comentario = comentario;
         this.users = users;
     }
 
-    public int getId_proyecto() {
+    public int getIdproyecto() {
         return idproyecto;
     }
 
-    public void setId_proyecto(int id_proyecto) {
-        this.idproyecto = id_proyecto;
+    public void setIdproyecto(int idproyecto) {
+        this.idproyecto = idproyecto;
     }
 
     public String getNombre() {
@@ -92,22 +85,6 @@ public class Proyectos {
 
     public void setPuestrobuscado(String puestrobuscado) {
         this.puestrobuscado = puestrobuscado;
-    }
-
-    public Puntuacion getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(Puntuacion puntuacion) {
-        this.puntuacion = puntuacion;
-    }
-
-    public Comentario getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(Comentario comentario) {
-        this.comentario = comentario;
     }
 
     public Users getUsers() {

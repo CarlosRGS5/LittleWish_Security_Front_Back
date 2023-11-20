@@ -10,4 +10,6 @@ public interface ICurriculumVitaeService {
     public List<CurriculumVitae> list();
     public void delete(int ID_CV);
     public CurriculumVitae listarId(int ID_CV);
+    public List<String[]> quantityTotalUsersWithCV();
+
 }

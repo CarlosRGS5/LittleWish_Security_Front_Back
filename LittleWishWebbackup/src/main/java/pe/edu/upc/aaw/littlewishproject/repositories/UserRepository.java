@@ -7,12 +7,17 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upc.aaw.littlewishproject.entities.Users;
+import pe.edu.upc.aaw.littlewishproject.dtos.UserRoleCountDTO;
 
 import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
+
     public Users findByUsername(String username);
+
+    @Query("SELECT NEW pe.edu.upc.aaw.littlewishproject.dtos.UserRoleCountDTO(r.rol, COUNT(u.id)) FROM Users u JOIN u.roles r GROUP BY r.rol")
+    List<UserRoleCountDTO> countUsersByRoleDTO();
 
     //BUSCAR POR NOMBRE
     @Query("select count(u.username) from Users u where u.username =:username")

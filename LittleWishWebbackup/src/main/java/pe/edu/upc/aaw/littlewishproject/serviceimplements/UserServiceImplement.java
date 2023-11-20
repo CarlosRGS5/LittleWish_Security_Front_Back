@@ -4,11 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.littlewishproject.dtos.UsersDTO;
-import pe.edu.upc.aaw.littlewishproject.entities.Tarjeta;
 import pe.edu.upc.aaw.littlewishproject.entities.Users;
 import pe.edu.upc.aaw.littlewishproject.repositories.UserRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUserService;
+import pe.edu.upc.aaw.littlewishproject.dtos.UserRoleCountDTO;
 
 import java.util.List;
 
@@ -37,6 +36,11 @@ public class UserServiceImplement implements IUserService {
 
     @Override
     public Users obtenerUsuarioxUsername(String username){ return uR.findByUsername(username);}
+
+    @Override
+    public List<UserRoleCountDTO> countUsersByRoleDTO() {
+        return uR.countUsersByRoleDTO();
+    }
 
     public UserServiceImplement(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;

@@ -27,6 +27,10 @@ public class CurriculumVitaeServiceImplement implements ICurriculumVitaeService 
     public void delete(int ID_CV) {
         cvR.deleteById(ID_CV);
     }
+    @Override
+    public List<String[]> quantityTotalUsersWithCV() {
+        return cvR.quantityTotalUsersWithCV();
+    }
 
     @Override
     public CurriculumVitae listarId(int ID_CV) {

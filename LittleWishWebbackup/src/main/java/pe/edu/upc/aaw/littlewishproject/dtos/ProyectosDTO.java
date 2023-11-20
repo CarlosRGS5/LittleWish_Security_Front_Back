@@ -1,13 +1,6 @@
 package pe.edu.upc.aaw.littlewishproject.dtos;
 
-import pe.edu.upc.aaw.littlewishproject.entities.Comentario;
-import pe.edu.upc.aaw.littlewishproject.entities.Puntuacion;
-import pe.edu.upc.aaw.littlewishproject.entities.Users;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
 public class ProyectosDTO {
@@ -23,18 +16,15 @@ public class ProyectosDTO {
 
     private String puestrobuscado;
 
-    private PuntuacionDTO puntuacion;
-
-    private ComentarioDTO comentario;
 
     private UsersDTO users;
 
-    public int getId_proyecto() {
+    public int getIdproyecto() {
         return idproyecto;
     }
 
-    public void setId_proyecto(int id_proyecto) {
-        this.idproyecto = id_proyecto;
+    public void setIdproyecto(int idproyecto) {
+        this.idproyecto = idproyecto;
     }
 
     public String getNombre() {
@@ -77,21 +67,6 @@ public class ProyectosDTO {
         this.puestrobuscado = puestrobuscado;
     }
 
-    public PuntuacionDTO getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(PuntuacionDTO puntuacion) {
-        this.puntuacion = puntuacion;
-    }
-
-    public ComentarioDTO getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(ComentarioDTO comentario) {
-        this.comentario = comentario;
-    }
 
     public UsersDTO getUsers() {
         return users;

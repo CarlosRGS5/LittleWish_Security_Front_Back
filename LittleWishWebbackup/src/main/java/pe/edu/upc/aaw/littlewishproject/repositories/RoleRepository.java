@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upc.aaw.littlewishproject.entities.Role;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 }

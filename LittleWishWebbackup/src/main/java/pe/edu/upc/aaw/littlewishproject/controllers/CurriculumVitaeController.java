@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.littlewishproject.dtos.CurriculumVitaeDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.FormacionAcademicaDTO;
+import pe.edu.upc.aaw.littlewishproject.dtos.userCVDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.CurriculumVitae;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.ICurriculumVitaeService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,5 +50,16 @@ public class CurriculumVitaeController {
         ModelMapper m=new ModelMapper();
         CurriculumVitaeDTO dto=m.map(cvS.listarId(id),CurriculumVitaeDTO.class);
         return dto;
+    }
+    @GetMapping("/TotalUsersconCV")
+    public List<userCVDTO> cantidadTotalUsuariosCV() {
+        List<String[]> lista = cvS.quantityTotalUsersWithCV();
+        List<userCVDTO> listaDTO = new ArrayList<>();
+        for (String[] data : lista) {
+            userCVDTO dto = new userCVDTO();
+            dto.setQuantityuser(Integer.parseInt(data[0]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 }

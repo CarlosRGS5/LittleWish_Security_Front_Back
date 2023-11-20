@@ -10,6 +10,10 @@ public class Comentario {
     private int idComentario;
     @Column(name = "comentario", nullable = false, length = 35)
     private String comentario;
+
+    @Column(name = "puntuacion", nullable = true)
+    private int puntuacion;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Users users;
@@ -30,11 +34,20 @@ public class Comentario {
         this.usersR = usersR;
     }
 
-    public Comentario(int idComentario, String comentario, Users users, Users usersR) {
+    public Comentario(int idComentario, String comentario, Users users, Users usersR, int puntuacion) {
         this.idComentario = idComentario;
         this.comentario = comentario;
         this.users = users;
         this.usersR = usersR;
+        this.puntuacion = puntuacion;
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
     public int getIdComentario() {

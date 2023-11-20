@@ -14,4 +14,8 @@ public interface IComentarioService {
 
     public void delete(int idComentario);
 
+    public List<String[]> valoracionPorUsuario();
+
+
+
 }

@@ -3,10 +3,10 @@ package pe.edu.upc.aaw.littlewishproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.littlewishproject.dtos.ComentarioDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.UsersDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Users;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUserService;
+import pe.edu.upc.aaw.littlewishproject.dtos.UserRoleCountDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -47,14 +47,24 @@ public class UsersController {
         Users u = m.map(dto, Users.class);
         uS.insert(u);
     }
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public UsersDTO listarId(@PathVariable("id") Integer id) {
         ModelMapper m=new ModelMapper();
         UsersDTO dto=m.map(uS.listarId(id),UsersDTO.class);
         return dto;
-    }
+    }*/
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         uS.delete(id);
     }
+
+    @GetMapping("/countByRoleDTO")
+    public List<UserRoleCountDTO> countUsersByRoleDTO() {
+        return uS.countUsersByRoleDTO();
+    }
+
+
+
+
+
 }

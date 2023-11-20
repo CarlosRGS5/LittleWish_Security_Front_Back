@@ -26,13 +26,20 @@ public class ComentarioServiceImplement implements IComentarioService {
 
     @Override
     public List<Comentario> listByUser(Long idUser){
-        return cR.findAll().stream().filter(comentario -> comentario.getUsers().getId() == idUser).collect(Collectors.toList());
+        return cR.findAll().stream().filter(comentario -> comentario.getUsersR().getId() == idUser).collect(Collectors.toList());
         //return cR.findAll();
-        }
+    }
 
     @Override
     public void delete(int idUniversity){
         cR.deleteById(idUniversity);
     }
+
+    @Override
+    public List<String[]> valoracionPorUsuario() {
+        return cR.valoracionPorUsuario();
+    }
+
+
 
 }

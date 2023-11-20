@@ -13,9 +13,10 @@ public class ProyectosServiceImplement implements IProyectosService {
     @Autowired
     private IProyectosRepository pR;
 
+
     @Override
-    public void insert(Proyectos proyectos) {
-        pR.save(proyectos);
+    public void insert(Proyectos proye) {
+        pR.save(proye);
     }
 
     @Override
@@ -24,7 +25,19 @@ public class ProyectosServiceImplement implements IProyectosService {
     }
 
     @Override
-    public Proyectos buscarProyecto(String descripcion) {
-        return pR.buscarProyecto(descripcion);
+    public void delete(int idProyecto) {
+        pR.deleteById(idProyecto);
     }
+
+    @Override
+    public Proyectos listarId(int idProyecto) {
+        return pR.findById(idProyecto).orElse(new Proyectos());
+    }
+
+    @Override
+    public List<String[]> quantityProyectDesarrollador() {
+        return pR.quantityProyectDesarrollador();
+    }
+
+
 }
