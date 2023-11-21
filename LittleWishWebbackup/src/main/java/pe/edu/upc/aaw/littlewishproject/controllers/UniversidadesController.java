@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.littlewishproject.dtos.CarrerasDTO;
+import pe.edu.upc.aaw.littlewishproject.dtos.UniversidadesCarrerasDTO;
 import pe.edu.upc.aaw.littlewishproject.dtos.UniversidadesDTO;
+import pe.edu.upc.aaw.littlewishproject.dtos.UserRoleCountDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Universidades;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUniversidadesService;
 
@@ -50,4 +52,13 @@ public class UniversidadesController {
         UniversidadesDTO dto=m.map(uS.listarId(id),UniversidadesDTO.class);
         return dto;
     }
+    @GetMapping("/contar")
+    public UniversidadesCarrerasDTO contarUniversidades() {
+        long cantidadUniversidades = uS.contarUniversidades();
+        UniversidadesCarrerasDTO dto = new UniversidadesCarrerasDTO();
+        dto.setCantidadUniversidades(cantidadUniversidades);
+        return dto;
+    }
+
+
 }

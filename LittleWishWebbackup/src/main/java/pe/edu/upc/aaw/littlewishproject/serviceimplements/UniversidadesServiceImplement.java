@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.littlewishproject.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.littlewishproject.dtos.UniversidadesCarrerasDTO;
 import pe.edu.upc.aaw.littlewishproject.entities.Universidades;
 import pe.edu.upc.aaw.littlewishproject.repositories.IUniversidadesRepository;
 import pe.edu.upc.aaw.littlewishproject.servicesinterfaces.IUniversidadesService;
@@ -32,4 +33,11 @@ public class UniversidadesServiceImplement implements IUniversidadesService {
     public Universidades listarId(int ID_Universidades) {
         return uR.findById(ID_Universidades).orElse(new Universidades());
     }
+
+    @Override
+    public Long contarUniversidades() {
+        return uR.contarUniversidades();
+    }
+
+
 }
